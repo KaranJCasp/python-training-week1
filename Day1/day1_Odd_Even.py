@@ -13,6 +13,9 @@ Enter a number: 7
 
 userInput=int(input("Enter a number:"))
 
-res= "Even" if userInput %2==0 else "Odd"
+if userInput<0:
+    print(f'{userInput} number is negative')
+else:
+    res= "Even" if userInput %2==0 else "Odd"
 
 print(f"{userInput} is an {res} number")

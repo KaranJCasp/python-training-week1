@@ -12,8 +12,12 @@ Sum of first 5 numbers is: 15
 
 userInput=int(input("Enter N:"))
 sum=0
-for i in range(1,userInput):
-    sum+=i
+
+if userInput<0:
+    print(f'{userInput} number is negative')
+else:
+    for i in range(1,userInput+1):
+        sum+=i
 
 
 print(f"Sum of first {userInput} numbers is: {sum}")
