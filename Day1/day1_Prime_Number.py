@@ -19,7 +19,11 @@ userInput=int(input("Enter N:"))
 
 # create function for prime number check
 def IsPrime(userInput):
-    if userInput<2:
+    if userInput<0:
+        return 'Number is negative'
+    elif userInput==0:
+        return 'Number is zero'
+    elif userInput<2:
         return False
     for i in range(2,userInput):
         if userInput%i==0:

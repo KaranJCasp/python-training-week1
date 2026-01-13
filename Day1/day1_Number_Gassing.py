@@ -22,16 +22,21 @@ import random
 attempt = 0
 # Generates a random number between 1 and 3
 randomNumber = random.randint(1, 100)
-
+limit=7
 while True:
     userInput = int(input("Enter N: "))
     attempt += 1
+    if attempt==7:
+        break
+    elif userInput<0:
+        print(f'user input is neagtive ')
+    elif userInput==0:
+        print('number is zero')
     
-    if userInput == randomNumber:
+    elif userInput == randomNumber:
         print(f"Congratulations! You guessed it in {attempt} attempts!")
         break  
-    
-    if randomNumber > userInput:
+    elif randomNumber > userInput:
         print("Too low! Try again.")
     else:
         print("Too high! Try again.")
