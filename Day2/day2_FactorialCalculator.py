@@ -23,11 +23,11 @@ def factorial_iterative(n):
 userInput=int(input("Enter N:"))
 factorial_iterative(userInput)
 
-# actorial_recursive(n) - using recursion
+# factorial_recursive(n) - using recursion
 
-def factorial_iterative(n):
+def factorial_recursive(n):
     if n==0 | n==1:
         return 1
-    return n*factorial_iterative(n-1)
+    return n*factorial_recursive(n-1)
 userInput=int(input("Enter Number:"))
-print(f'factorial for {userInput } ans :{factorial_iterative(userInput)}')
+print(f'factorial for {userInput } ans :{factorial_recursive(userInput)}')

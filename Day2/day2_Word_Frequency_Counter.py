@@ -21,8 +21,9 @@ Word frequencies:
 '''
 
 
+from operator import itemgetter
 #read the file 
-
+import operator
 try:
     file = open("sample.txt", "r")
     content = file.read()
@@ -50,29 +51,21 @@ try:
             
     # in the word which are frequent times that print 5 word and frequ
 
-    import operator
-    res = dict(sorted(HowMany.items(), key=operator.itemgetter(1)))
-    print("sorted item ",res)
-
-    i = len(HowMany) - 1
+    sorted_items = dict(sorted(HowMany.items(), key=operator.itemgetter(1), reverse=True))
     count=0
-    while i >= 0:
-        count=count+1
-        if(count==5):
+    first_five_keys=[]
+    for key,value in sorted_items.items():
+        if count < 5:
+            first_five_keys.append({key:value})
+            count += 1
+        else:
             break
-        print("key from last 5 ",res.keys())
-        i -= 1
-    print()
+    print(first_five_keys)
+    print("sorted item ",sorted_items)
 except FileNotFoundError:
     print(f"Error: The file '{file.name}' was not found.")   
 
         
 finally:
     file.close()
-'''
-import operator
 
-a = {"Gfg": 5, "is": 7, "Best": 2, "for": 9, "geeks": 8}
-res = dict(sorted(a.items(), key=operator.itemgetter(1)))
-print(res)
-'''

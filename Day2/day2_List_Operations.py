@@ -29,7 +29,7 @@ def List_Operation():
         elif max!=min | min >li[i] :
             min=li[i]
     avg=sum/len(li)
-    print('prints:{"maximum :":max ,"minimum" : min,"average":int(avg),"sum" :sum}')
+    print({"Maximum":max,"Minimum":min,"avg":avg,"sum":sum})
 
     #print all even number
     print("Even numbers in the list:",end=" ")
